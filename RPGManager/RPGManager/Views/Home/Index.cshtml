@@ -3,20 +3,14 @@
     ViewBag.Title = "Index";
     Layout = "~/Shared/_Layout1.cshtml";
 }
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+    <link href="~/content/questr-styles.css" rel="stylesheet" />
+</head>
 <div class="Absolute-Center">
     <div class="btn-group">
         <button type="submit" class="btn btn-default" onclick="location.href='@Url.Action("DMRedirect", "Home")'">DM SERVICE</button>
         <button type="submit" class="btn btn-default" onclick="location.href='@Url.Action("SignOut", "Chat")'">PC SERVICE</button>
     </div>
 </div>
-
-
-<style>
-    .Absolute-Center {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-    }
-</style>

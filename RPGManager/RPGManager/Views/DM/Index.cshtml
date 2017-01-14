@@ -308,15 +308,21 @@ KNOCKOUT JS CODE
     ko.applyBindings(new PCModel(initialData));
 });
 </script>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+    <link href="~/content/questr-styles.css" rel="stylesheet" />
+</head>
 <!--left paged div-->
-<div style="margin-left:10px; float:left; width: 30vw;">
+<div class = "left-div">
     <div class="form-group">
         <label for="notes">Notes:</label>
 
         <textarea class="form-control" rows="12" id="notes" style="max-width: 100%;"></textarea>
     </div>
 
-    <div style="width: 100%; height: 200px; border: solid lightgray 1px; border-radius: 4px; overflow:auto;" class="form-group">
+    <div class="dice-div form-group">
         <table style="float:left;">
             <thead>
                 <tr>
@@ -329,68 +335,68 @@ KNOCKOUT JS CODE
             <tbody>
                 <tr>
                     <td>
-                        <input id="inAmt" style="width:70px" class="form-control" value="1" />
+                        <input id="inAmt" class="form-control" value="1" />
                     </td>
                     <td><h4>d</h4></td>
                     <td>
-                        <input id="inNFace" style="width:70px" class="form-control" value="6" />
+                        <input id="inNFace" class="form-control" value="6" />
                     </td>
                     <td>
                         <div class="input-group">
                             <span class="input-group-btn">
-                                <input type="button" class="btn btn-success" id="btnToggleMod" value="+" style="width: 35px; font-weight:900;" />
+                                <input type="button" class="btn btn-success" id="btn-toggle-mod" value="+" />
                             </span>
-                            <input id="inMod" style="width:70px" type="text" class="form-control" value="0">
+                            <input id="inMod" type="text" class="form-control" value="0">
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <!--roll button and result-->
                     <td colspan="4" style="text-align:center">
-                        <div style="display: inline-block; padding-top:15px;">
+                        <div id="btn-roll" >
                             <div class="input-group">
                                 <span class="input-group-btn">
                                     <input type="button" class="btn btn-default" id="btnRoll" value="Roll" />
                                 </span>
-                                <input id="inResult" style="width:100px; background-color:white;" type="text" class="form-control" readonly="readonly">
+                                <input id="inResult" type="text" class="form-control" readonly="readonly">
                             </div>
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="4" style="text-align:center">
-                        <div style="display: inline-block; padding-top:15px;">
+                        <div id ="div-btn-clear" >
                             <input type="button" class="btn btn-default" id="btnClear" value="Clear" />
                         </div>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <div style="width: 35%; float: right; height: 90%; margin: 10px; overflow:hidden;">
-            <textarea style="width:100%; height:100%; resize:none; background-color:white;" class="form-control" id="taResults" readonly="readonly"></textarea>
+        <div id="div-results" >
+            <textarea class="form-control" id="taResults" readonly="readonly"></textarea>
         </div>
     </div> 
 
     <!--turn/time tracking-->
     <div class="form-group boundary">
         <!--time tracker-->
-        <div style="display:inline-block;">
-            <div class="input-group" style="padding-left:10px; padding-right:10px; display:inline-block;">
-                <input style="width:90px; background-color: white;"readonly="readonly" type="text" class="form-control" id="tod-val" value="12:00 AM">
-                <input style="width:60px;" type="text" class="form-control" id="tod-mod" value="0">
+        <div id="div-time-tracker" >
+            <div id="div-tod" class="input-group" >
+                <input readonly="readonly" type="text" class="form-control" id="tod-val" value="12:00 AM">
+                <input type="text" class="form-control" id="tod-mod" value="0">
                 <span class="input-group-btn" style="float:left">
-                    <input type="button" class="btn btn-default blackButton" id="btn-tod-len" value="H" style="width: 40px"/>
+                    <input type="button" class="btn btn-default blackButton" id="btn-tod-len" value="H" />
                     <input type="button" class="btn btn-default" id="tod-go" value="Go" />
                 </span>
             </div>
         </div>
         <!--turn tracker-->
-        <div style="display:inline-block; float:right">
+        <div id="div-turn-tracker" >
             <div class="time-track-text">Turn:</div>
-            <div id="turn-value-num" class="time-track-text" style="padding-left: 10px; width: 40px;">0</div>
-            <div class="input-group" style="padding-left:10px; padding-right:10px; display:inline-block;">
-                <input style="width:70px; background-color: white;" type="text" class="form-control" id="turn-value-time" readonly="readonly" value="00:00">
-                <span class="input-group-btn" style="float:left">
+            <div id="turn-value-num" class="time-track-text" >0</div>
+            <div id="div-turn-time" class="input-group" >
+                <input  type="text" class="form-control" id="turn-value-time" readonly="readonly" value="00:00">
+                <span id="turn-btns" class="input-group-btn" >
                     <input type="button" class="btn btn-default" id="btn-add-turn" value="+1" />
                     <input type="button" class="btn btn-default" id="btn-reset-turn" value="Reset" />
                 </span>
@@ -400,7 +406,7 @@ KNOCKOUT JS CODE
 </div>
 
 <!--right paged div-->
-<div style="float:right; margin-top:25px; width: 65vw;">
+<div class="right-div" >
     <div class="container">
         <ul class="nav nav-tabs" id="sortable" data-bind="foreach: pcsList">
 
@@ -411,14 +417,14 @@ KNOCKOUT JS CODE
         <!--player container-->
         <div class="container-border-cup">
             <div class="tab-content " data-bind="foreach: pcsList">
-                <div class="tab-pane tabbed-content-style" style="padding-right:10px" data-bind="attr: {id: 'tab' + id}, css: {active: $index() == 0 }">
+                <div id="div-player-det" class="tab-pane tabbed-content-style" data-bind="attr: {id: 'tab' + id}, css: {active: $index() == 0 }">
                     <!--player details-->
-                    <table style="width: 100%;">
+                    <table id="player-table" >
                         <tr>
                             <td>
                                 <h3 data-bind="text: name"></h3>
                             </td>
-                            <td style="float: right; margin-top: 20px;">
+                            <td id="player-class" >
                                 <h4 data-bind="text: background"></h4>
                             </td>
                         </tr>
@@ -426,32 +432,32 @@ KNOCKOUT JS CODE
                             <td>
                                 <h4 data-bind="text: race + ' ' + playerClass"></h4>
                             </td>
-                            <td style="float: right;">
+                            <td id="player-alignment" >
                                 <h4 data-bind="text: Alignment"></h4>
                             </td>
                         </tr>
                     </table>
 
                     <!--player hp numbered-->
-                    <div style="float:left; font-size:15pt; font-weight:500; line-height:35px; padding-right:20px; min-width:100px;">
+                    <div id="player-hp-num" >
                         <span data-bind="text: obCurHp"></span>/<span data-bind="text: obMaxHp"></span>
                     </div>
                     <!--player hp barred-->
-                    <div class="progress" style="width: 50%; height: 35px; float:left">
-                        <div class="progress-bar" style="float:left;" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" data-bind="text: $root.getHpPercentage($data) + '%', attr:{class: 'progress-bar ' + $root.hpClass($data)}, style:{width: $root.getHpPercentage($data) + '%'}"></div>
+                    <div id ="player-hp-bar" class="progress" >
+                        <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" data-bind="text: $root.getHpPercentage($data) + '%', attr:{class: 'progress-bar ' + $root.hpClass($data)}, style:{width: $root.getHpPercentage($data) + '%'}"></div>
                     </div>
                     <!--player hp modifier-->
                     <div class="input-group" style="padding-left:20px">
                         <span class="input-group-btn">
-                            <input type="button" class="btn btn-danger" data-bind="click: $root.hpModeToggle" value="-" style="width: 35px; font-weight:900;" />
+                            <input id="btn-hp-toggle" type="button" class="btn btn-danger" data-bind="click: $root.hpModeToggle" value="-" />
                         </span>
-                        <input style="width:70px" type="text" class="form-control" data-bind="attr: {id: 'inModHP' + $index}, value: hpModAmt">
-                        <span class="input-group-btn" style="float:left">
+                        <input id="hp-mod-amt" style="width:70px" type="text" class="form-control" data-bind="attr: {id: 'inModHP' + $index}, value: hpModAmt">
+                        <span id="btn-go-hp" class="input-group-btn" >
                             <input type="button" class="btn btn-default" data-bind="click: $root.hpModClick" value="Go" data-toggle="tooltip" title="Test" />
                         </span>
                     </div>
 
-                    <table class="exp-info" style="width: 100%">
+                    <table class="exp-info" >
                         <tr>
                             <td>
                                 <span data-bind="text: 'Level: ' + level()"></span>
@@ -460,13 +466,13 @@ KNOCKOUT JS CODE
                                 <span data-bind="text: ' : ' + exp()"></span>
                             </td>
                             <td>
-                                <div class="progress progress-custom" style="width: 100%; margin-top: 20px;" data-toggle="tooltip" data-bind="attr: {title: $data.expText(), 'data-original-title': $data.expText()}">
+                                <div class="progress progress-custom" data-toggle="tooltip" data-bind="attr: {title: $data.expText(), 'data-original-title': $data.expText()}">
                                     <div class="progress-bar progress-bar-custom " role="progressbar" data-bind="text: $root.getExpPercentage($data) + '%', style:{width: $root.getExpPercentage($data) + '%'}"></div>
                                 </div>
                             </td>
                             <td>
-                                <div class="input-group" style="padding-left:20px">
-                                    <input style="width:70px" type="text" class="form-control" data-bind="value: expModAmt">
+                                <div id="div-exp" class="input-group" >
+                                    <input id="exp-mod-amt" type="text" class="form-control" data-bind="value: expModAmt">
                                     <span class="input-group-btn">
                                         <input type="button" class="btn btn-default" value="Go" data-bind="click: $root.expModClick" />
                                     </span>
@@ -475,11 +481,11 @@ KNOCKOUT JS CODE
                         </tr>
                     </table>
 
-                    <div style="width: 50%; float: left;">
+                    <div id="div-good" >
                         <label>The Good:</label>
                         <textarea class="form-control" rows="12" style="max-width: 95%;"></textarea>
                     </div>
-                    <div style="width: 50%; float: right;">
+                    <div id="div-bad" >
                         <label>The Bad:</label>
                         <textarea class="form-control" rows="12" style="max-width: 100%;"></textarea>
                     </div>
