@@ -30,6 +30,18 @@
         }
     }
 
+    //UTILITY METHODS
+    $('#newTabName').keypress(function (e) {
+        var key = e.which;
+        if (key == 13)  // the enter key code
+        {
+            $('#add-tab-mm').click();
+            return false;
+        }
+    });
+
+    //EO UTILITY METHODS
+
 
     function makeTimer(secTime, minTime) {
         var strSec;
@@ -284,4 +296,5 @@
 
     //EO MM
 
+    
 });
