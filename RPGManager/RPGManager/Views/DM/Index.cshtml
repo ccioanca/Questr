@@ -86,60 +86,60 @@ KNOCKOUT JS CODE
         {
             id: 0,
             pcName: "David E",
-            curHp: 25,
-            hp: 25,
+            curHp: 17,
+            hp: 26,
             name: "Alton Brown",
             playerClass: "Barbarian",
             level: 1,
             background: "Soldier",
             race: "Stout Halfling",
             Alignment: "Lawful Good",
-            exp: 831,
+            exp: 1095,
             inspiration: 0,
             proficiencyBonus: 0,
         },
         {
             id: 1,
             pcName: "Nick C",
-            hp: 22,
-            curHp: 22,
+            hp: 28,
+            curHp: 28,
             name: "Torrash Noraxius",
             playerClass: "Paladin",
             level: 1,
             background: "Noble",
             race: "Dragonborn",
             Alignment: "Lawful Good",
-            exp: 831,
+            exp: 995,
             inspiration: 0,
             proficiencyBonus: 0
         },
         {
             id: 3,
             pcName: "Rachel O",
-            hp: 14,
-            curHp: 14,
+            hp: 20,
+            curHp: 20,
             name: "Gwynevyr Meliamne",
             playerClass: "Ranger",
             level: 1,
             background: "Outlander",
             race: "Wood Elf",
             Alignment: "Chaotic Good",
-            exp: 831,
+            exp: 995,
             inspiration: 0,
             proficiencyBonus: 0
         },
         {
             id: 4,
             pcName: "Cesar B",
-            hp: 14,
-            curHp: 14,
+            hp: 20,
+            curHp: 20,
             name: "Grifith Hornraven (Whiteraven)",
             playerClass: "Bard",
             level: 1,
             background: "Charloten",
             race: "Human",
             Alignment: "Chaotic Neutral",
-            exp: 831,
+            exp: 995,
             inspiration: 0,
             proficiencyBonus: 0
         },
@@ -154,7 +154,22 @@ KNOCKOUT JS CODE
             background: "Outlander",
             race: "Dragonborn",
             Alignment: "Neutral",
-            exp: 164,
+            exp: 364,
+            inspiration: 0,
+            proficiencyBonus: 0
+        },
+        {
+            id: 6,
+            pcName: "DM",
+            hp: 34,
+            curHp: 34,
+            name: "Cinder",
+            playerClass: "Rogue",
+            level: 5,
+            background: "Spy",
+            race: "Tiefling",
+            Alignment: "Neutral",
+            exp: 6500,
             inspiration: 0,
             proficiencyBonus: 0
         }
@@ -490,6 +505,35 @@ KNOCKOUT JS CODE
                         <textarea class="form-control" rows="12" style="max-width: 100%;"></textarea>
                     </div>
 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container container-mm">
+        <ul class="nav nav-tabs nav-tabs-mm">
+            <!--<li class="active"><a href="#tab_01" data-toggle="tab">Tab 1</a><span style="line-height: 30px">✕</span></li>-->
+            <li><button class="btn btn-primary" id="add-btn-mm" data-toggle="modal" data-target="#mmModal"><b>＋</b> Add</button></li>
+        </ul>
+        <div class="tab-content tab-content-mm">
+            <!--<div class="tab-pane active" id="tab_01">Tab 1 Content</div>-->
+        </div>
+    </div>
+    <div class="modal fade" id="mmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="newTabName" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="add-tab-mm" data-dismiss="modal">Add</button>
                 </div>
             </div>
         </div>
