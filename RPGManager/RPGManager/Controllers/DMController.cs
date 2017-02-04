@@ -13,5 +13,12 @@ namespace RPGManager.Controllers
         {
             return View();
         }
+
+        public ActionResult NewMonster()
+        {
+
+            PartialViewResult pv = PartialView("~/Views/Shared/_MonsterDetails.cshtml");
+            return pv;
+        }
     }
 }

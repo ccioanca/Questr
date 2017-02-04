@@ -267,32 +267,7 @@
 
     });
 
-    function addTab(content) {
-        var label = $("#newTabName").val();
-        var id = $(".nav-tabs-mm").children().length;
 
-        var nav = $(".nav-tabs-mm");
-        var tabs = $(".tab-content-mm");
-
-        if (id == 1) {
-            var new_tab = $('<div>').addClass('tab-pane in active').attr('id', 'tab_' + id).append(content);
-            $("#add-btn-mm").closest('li').before('<li class="active"><a href="#tab_' + id + '" class="mm-tab-label">' + label + '</a><span style="line-height: 28px">✕</span></li>');
-        }
-        else {
-            var new_tab = $('<div>').addClass('tab-pane in').attr('id', 'tab_' + id + '_mm').append(content);
-            $("#add-btn-mm").closest('li').before('<li><a href="#tab_' + id + '_mm">' + label + '</a><span style="line-height: 30px">✕</span></li>');
-        }
-        tabs.append(new_tab);
-
-        // if(id == 1){
-        //     var tab = $('.nav-tabs').children().get(0);
-        //     tab.addClass("active");
-        // }
-    };
-
-    $('#add-tab-mm').click(function () {
-        addTab("Test");
-    });
 
     //EO MM
 
