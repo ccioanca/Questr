@@ -267,9 +267,24 @@
 
     });
 
-
-
     //EO MM
 
-    
+    //EE SECTION
+    $("#btn-ee-go").click(function () {
+        var expression = $("#ee-input").val();
+        var result;
+        try{
+            result = eval(expression);
+
+            var finalResult = "[" + expression + "] = " + result;
+
+            var wholeStr = $("#ee-log-results").val();
+            var newStr = finalResult + "\n" + wholeStr;
+            $("#ee-log-results").val(newStr);
+        }
+        catch (e) {
+            alert("Expression not recognized");
+        }
+    });
+    //EO EE
 });

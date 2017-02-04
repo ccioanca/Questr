@@ -333,7 +333,6 @@ KNOCKOUT JS CODE
             $.get('@Url.Action("NewMonster", "DM")', function (data) {
                 content = data;
             
-
                 var label = $("#newTabName").val();
                 var id = $(".nav-tabs-mm").children().length;
 
@@ -349,11 +348,6 @@ KNOCKOUT JS CODE
                     $("#add-btn-mm").closest('li').before('<li><a href="#tab_' + id + '_mm">' + label + '</a><span style="line-height: 30px">✕</span></li>');
                 }
                 tabs.append(new_tab);
-
-                // if(id == 1){
-                //     var tab = $('.nav-tabs').children().get(0);
-                //     tab.addClass("active");
-                // }
             });
         };
 
@@ -377,6 +371,7 @@ KNOCKOUT JS CODE
         <textarea class="form-control" rows="12" id="notes" style="max-width: 100%;"></textarea>
     </div>
 
+    <label for="inAmt">Dice Roller:</label>
     <div class="dice-div form-group">
         <table style="float:left;">
             <thead>
@@ -433,6 +428,7 @@ KNOCKOUT JS CODE
     </div> 
 
     <!--turn/time tracking-->
+    <label for="tod-mod">Turn/Time Tracker:</label>
     <div class="form-group boundary">
         <!--time tracker-->
         <div id="div-time-tracker" >
@@ -456,6 +452,21 @@ KNOCKOUT JS CODE
                     <input type="button" class="btn btn-default" id="btn-reset-turn" value="Reset" />
                 </span>
             </div>
+        </div>
+    </div>
+
+    <!--expression evaluator-->
+    <label>Expression Evaluator:</label>
+    <div class="do-border">
+        <div class="input-group" id="ee-input-container">
+            <input type="text" class="form-control" id="ee-input" placeholder="Example: 1+1">
+            <span class="input-group-btn">
+                <input type="button" class="btn btn-default" id="btn-ee-go" value="Go" />
+            </span>
+        </div>
+
+        <div id="ee-logger">
+            <textarea class="form-control" readonly="readonly" id="ee-log-results"></textarea>
         </div>
     </div>
 </div>
