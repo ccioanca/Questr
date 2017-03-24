@@ -233,6 +233,38 @@
         }
     });
 
+    $("#tod-val").blur(function () {
+        //sanatize input first
+        var tod = $("#tod-val").val().replace(/ /g, '');
+        var toda = [];
+        //check to see if it contains either "AM" or "PM"
+        if (tod.toUpperCase().includes("AM")) {
+            tod = tod.replace(/am/gi, '');
+            todTimePeriod = "AM";
+        }
+        else {
+            tod = tod.replace(/pm/gi, '');
+            todTimePeriod = "PM";
+        }
+        //assign hour and minute variables
+        if (tod.includes(":"))
+            toda = tod.split(":");
+        else
+            toda[0] = parseInt(tod, 10) +'';
+        //set necesarry variables
+            todTimeHour = parseInt(toda[0].replace(/\D/g, ''), 10) +'';
+        if (toda.length > 1)
+            todTimeMin = parseInt(toda[1].replace(/\D/g, ''), 10) +'';
+
+        var retVal;
+        retVal = (todTimeHour < 10 && todTimeHour.length < 2) ? "0" + todTimeHour : todTimeHour;
+        retVal += ":"
+        retVal += (todTimeMin < 10 && todTimeMin.length < 2) ? "0" + todTimeMin : todTimeMin;
+        retVal += " " + todTimePeriod;
+
+        $("#tod-val").val(retVal);
+    });
+
     //MM section
 
     $(".nav-tabs-mm").on("click", "a", function (e) {
