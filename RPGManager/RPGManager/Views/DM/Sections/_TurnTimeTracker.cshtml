@@ -1,0 +1,27 @@
+﻿    <!--turn/time tracking-->
+<label for="tod-mod">Turn/Time Tracker:</label>
+<div class="form-group boundary">
+    <!--time tracker-->
+    <div id="div-time-tracker">
+        <div id="div-tod" class="input-group">
+            <input type="text" class="form-control" id="tod-val" value="12:00 AM">
+            <input type="text" class="form-control" id="tod-mod" value="0">
+            <span class="input-group-btn" style="float:left">
+                <input type="button" class="btn btn-default blackButton" id="btn-tod-len" value="H" />
+                <input type="button" class="btn btn-default" id="tod-go" value="Go" />
+            </span>
+        </div>
+    </div>
+    <!--turn tracker-->
+    <div id="div-turn-tracker">
+        <div class="time-track-text">Turn:</div>
+        <div id="turn-value-num" class="time-track-text">0</div>
+        <div id="div-turn-time" class="input-group">
+            <input type="text" class="form-control" id="turn-value-time" readonly="readonly" value="00:00">
+            <span id="turn-btns" class="input-group-btn">
+                <input type="button" class="btn btn-default" id="btn-add-turn" value="+1" />
+                <input type="button" class="btn btn-default" id="btn-reset-turn" value="Reset" />
+            </span>
+        </div>
+    </div>
+</div>

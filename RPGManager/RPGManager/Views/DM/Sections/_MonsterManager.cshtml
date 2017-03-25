@@ -1,0 +1,28 @@
+﻿<div class="container container-mm">
+    <ul class="nav nav-tabs nav-tabs-mm">
+        <!--<li class="active"><a href="#tab_01" data-toggle="tab">Tab 1</a><span style="line-height: 30px">✕</span></li>-->
+        <li><button class="btn btn-primary" id="add-btn-mm" data-toggle="modal" data-target="#mmModal"><b>＋</b> Add</button></li>
+    </ul>
+    <div class="tab-content tab-content-mm">
+        <!--<div class="tab-pane active" id="tab_01">Tab 1 Content</div>-->
+    </div>
+</div>
+<div class="modal fade" id="mmModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add New Monster</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control" id="newTabName" value="" autofocus />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="add-tab-mm" data-dismiss="modal">Add</button>
+            </div>
+        </div>
+    </div>
+</div>

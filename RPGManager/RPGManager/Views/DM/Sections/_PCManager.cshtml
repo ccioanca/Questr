@@ -1,0 +1,87 @@
+﻿<div class="container">
+    <ul class="nav nav-tabs" id="sortable" data-bind="foreach: pcsList">
+
+        <li data-bind="css: {active: $index() == 0 }">
+            <a data-bind="attr: {href: '#tab' + id}, text: pcName" data-toggle="tab"></a>
+        </li>
+    </ul>
+    <!--player container-->
+    <div class="container-border-cup">
+        <div class="tab-content " data-bind="foreach: pcsList">
+            <div id="div-player-det" class="tab-pane tabbed-content-style" data-bind="attr: {id: 'tab' + id}, css: {active: $index() == 0 }">
+                <!--player details-->
+                <table id="player-table">
+                    <tr>
+                        <td>
+                            <h3 data-bind="text: name"></h3>
+                        </td>
+                        <td id="player-class">
+                            <h4 data-bind="text: background"></h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4 data-bind="text: race + ' ' + playerClass"></h4>
+                        </td>
+                        <td id="player-alignment">
+                            <h4 data-bind="text: Alignment"></h4>
+                        </td>
+                    </tr>
+                </table>
+
+                <!--player hp numbered-->
+                <div id="player-hp-num">
+                    <span data-bind="text: obCurHp"></span>/<span data-bind="text: obMaxHp"></span>
+                </div>
+                <!--player hp barred-->
+                <div id="player-hp-bar" class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" data-bind="text: $root.getHpPercentage($data) + '%', attr:{class: 'progress-bar ' + $root.hpClass($data)}, style:{width: $root.getHpPercentage($data) + '%'}"></div>
+                </div>
+                <!--player hp modifier-->
+                <div class="input-group" style="padding-left:20px">
+                    <span class="input-group-btn">
+                        <input id="btn-hp-toggle" type="button" class="btn btn-danger" data-bind="click: $root.hpModeToggle" value="-" />
+                    </span>
+                    <input id="hp-mod-amt" style="width:70px" type="text" class="form-control" data-bind="attr: {id: 'inModHP' + $index}, value: hpModAmt">
+                    <span id="btn-go-hp" class="input-group-btn">
+                        <input type="button" class="btn btn-default" data-bind="click: $root.hpModClick" value="Go" data-toggle="tooltip" title="Test" />
+                    </span>
+                </div>
+
+                <table class="exp-info">
+                    <tr>
+                        <td>
+                            <span data-bind="text: 'Level: ' + level()"></span>
+                        </td>
+                        <td>
+                            <span data-bind="text: ' : ' + exp()"></span>
+                        </td>
+                        <td>
+                            <div class="progress progress-custom" data-toggle="tooltip" data-bind="attr: {title: $data.expText(), 'data-original-title': $data.expText()}">
+                                <div class="progress-bar progress-bar-custom " role="progressbar" data-bind="text: $root.getExpPercentage($data) + '%', style:{width: $root.getExpPercentage($data) + '%'}"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="div-exp" class="input-group">
+                                <input id="exp-mod-amt" type="text" class="form-control" data-bind="value: expModAmt">
+                                <span class="input-group-btn">
+                                    <input type="button" class="btn btn-default" value="Go" data-bind="click: $root.expModClick" />
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <div id="div-good">
+                    <label>The Good:</label>
+                    <textarea class="form-control" rows="12" style="max-width: 95%;"></textarea>
+                </div>
+                <div id="div-bad">
+                    <label>The Bad:</label>
+                    <textarea class="form-control" rows="12" style="max-width: 100%;"></textarea>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

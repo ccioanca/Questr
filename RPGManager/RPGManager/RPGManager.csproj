@@ -127,6 +127,12 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Shared\_MonsterDetails.cshtml" />
+    <Content Include="Views\DM\Sections\_DMNotes.cshtml" />
+    <Content Include="Views\DM\Sections\_DiceRoller.cshtml" />
+    <Content Include="Views\DM\Sections\_TurnTimeTracker.cshtml" />
+    <Content Include="Views\DM\Sections\_ExpressionEvaluator.cshtml" />
+    <Content Include="Views\DM\Sections\_PCManager.cshtml" />
+    <Content Include="Views\DM\Sections\_MonsterManager.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

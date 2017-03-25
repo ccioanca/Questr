@@ -1,0 +1,55 @@
+﻿<label for="inAmt">Dice Roller:</label>
+<div class="dice-div form-group">
+    <table style="float:left;">
+        <thead>
+            <tr>
+                <td>Amount</td>
+                <td></td>
+                <td>Num Faces</td>
+                <td>Modifier</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input id="inAmt" class="form-control" value="1" />
+                </td>
+                <td><h4>d</h4></td>
+                <td>
+                    <input id="inNFace" class="form-control" value="6" />
+                </td>
+                <td>
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <input type="button" class="btn btn-success" id="btn-toggle-mod" value="+" />
+                        </span>
+                        <input id="inMod" type="text" class="form-control" value="0">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <!--roll button and result-->
+                <td colspan="4" style="text-align:center">
+                    <div id="btn-roll">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <input type="button" class="btn btn-default" id="btnRoll" value="Roll" />
+                            </span>
+                            <input id="inResult" type="text" class="form-control" readonly="readonly">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align:center">
+                    <div id="div-btn-clear">
+                        <input type="button" class="btn btn-default" id="btnClear" value="Clear" />
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="div-results">
+        <textarea class="form-control" id="taResults" readonly="readonly"></textarea>
+    </div>
+</div> 
